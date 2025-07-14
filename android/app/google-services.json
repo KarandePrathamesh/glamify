@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "857868964979",
+    "project_id": "tryglamify",
+    "storage_bucket": "tryglamify.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:857868964979:android:3e7f0f353246c9b2a10606",
+        "android_client_info": {
+          "package_name": "com.example.glamify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxivBz1cEdd00mmPEKCfJfj6FdkJi7HdM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
