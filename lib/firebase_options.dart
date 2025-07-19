@@ -41,46 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDKTCBRTlR3XExS2VFp2cSpBG4eDLmh9Ww',
-    appId: '1:857868964979:web:5d78740102c5f2f9a10606',
-    messagingSenderId: '857868964979',
-    projectId: 'tryglamify',
-    authDomain: 'tryglamify.firebaseapp.com',
-    storageBucket: 'tryglamify.firebasestorage.app',
+    apiKey: 'AIzaSyAWhW_V0itlbvj3H1yn_8ZS0boc3I91Ous',
+    appId: '1:916297689274:web:cf1328dbefb7849fb3fa83',
+    messagingSenderId: '916297689274',
+    projectId: 'glamify-ef52b',
+    authDomain: 'glamify-ef52b.firebaseapp.com',
+    storageBucket: 'glamify-ef52b.firebasestorage.app',
+    measurementId: 'G-DY62CTE1J0',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCxivBz1cEdd00mmPEKCfJfj6FdkJi7HdM',
-    appId: '1:857868964979:android:3e7f0f353246c9b2a10606',
-    messagingSenderId: '857868964979',
-    projectId: 'tryglamify',
-    storageBucket: 'tryglamify.firebasestorage.app',
+    apiKey: 'AIzaSyDNiOvxKyEIXj4c49cjAAK-9Brvl8CHkOU',
+    appId: '1:916297689274:android:31630a00afcc0854b3fa83',
+    messagingSenderId: '916297689274',
+    projectId: 'glamify-ef52b',
+    storageBucket: 'glamify-ef52b.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC1mVgZbKxnh45CgQMnfP6a7xlwov-ZrZo',
-    appId: '1:857868964979:ios:c19697ef400b8805a10606',
-    messagingSenderId: '857868964979',
-    projectId: 'tryglamify',
-    storageBucket: 'tryglamify.firebasestorage.app',
+    apiKey: 'AIzaSyBXg4AXhcuHbL6_4ELNaeFk75UwfZTTtjg',
+    appId: '1:916297689274:ios:a7d7f610597be28cb3fa83',
+    messagingSenderId: '916297689274',
+    projectId: 'glamify-ef52b',
+    storageBucket: 'glamify-ef52b.firebasestorage.app',
     iosBundleId: 'com.example.glamify',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC1mVgZbKxnh45CgQMnfP6a7xlwov-ZrZo',
-    appId: '1:857868964979:ios:c19697ef400b8805a10606',
-    messagingSenderId: '857868964979',
-    projectId: 'tryglamify',
-    storageBucket: 'tryglamify.firebasestorage.app',
+    apiKey: 'AIzaSyBXg4AXhcuHbL6_4ELNaeFk75UwfZTTtjg',
+    appId: '1:916297689274:ios:a7d7f610597be28cb3fa83',
+    messagingSenderId: '916297689274',
+    projectId: 'glamify-ef52b',
+    storageBucket: 'glamify-ef52b.firebasestorage.app',
     iosBundleId: 'com.example.glamify',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDKTCBRTlR3XExS2VFp2cSpBG4eDLmh9Ww',
-    appId: '1:857868964979:web:32e62ca0d43ce235a10606',
-    messagingSenderId: '857868964979',
-    projectId: 'tryglamify',
-    authDomain: 'tryglamify.firebaseapp.com',
-    storageBucket: 'tryglamify.firebasestorage.app',
+    apiKey: 'AIzaSyAWhW_V0itlbvj3H1yn_8ZS0boc3I91Ous',
+    appId: '1:916297689274:web:0e5000e196adf298b3fa83',
+    messagingSenderId: '916297689274',
+    projectId: 'glamify-ef52b',
+    authDomain: 'glamify-ef52b.firebaseapp.com',
+    storageBucket: 'glamify-ef52b.firebasestorage.app',
+    measurementId: 'G-1GJE41LF3D',
   );
 }
