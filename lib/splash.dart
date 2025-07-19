@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen>
           children: <Widget>[
             FadeTransition(
               opacity: _fadeAnimation,
-              child: ClipOval(
+              child: ClipRRect(
                 child: Image.asset(
                   'assets/images/glamify_logo.png',
                   height: 200,

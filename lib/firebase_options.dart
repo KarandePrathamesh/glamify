@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'glamify-ef52b.firebasestorage.app',
     measurementId: 'G-1GJE41LF3D',
   );
+
 }

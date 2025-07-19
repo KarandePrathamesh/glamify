@@ -415,9 +415,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ),
                           );
                         } catch (e) {
+                          print('Error during signup: $e');
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
-                              content: Text('Signup failed due to : $e'),
+                              content: Text(
+                                'Signup failed due to : ${e.toString()}',
+                              ),
                             ),
                           );
                         }
