@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "857868964979",
-    "project_id": "tryglamify",
-    "storage_bucket": "tryglamify.firebasestorage.app"
+    "project_number": "916297689274",
+    "project_id": "glamify-ef52b",
+    "storage_bucket": "glamify-ef52b.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:857868964979:android:3e7f0f353246c9b2a10606",
+        "mobilesdk_app_id": "1:916297689274:android:31630a00afcc0854b3fa83",
         "android_client_info": {
           "package_name": "com.example.glamify"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCxivBz1cEdd00mmPEKCfJfj6FdkJi7HdM"
+          "current_key": "AIzaSyDNiOvxKyEIXj4c49cjAAK-9Brvl8CHkOU"
         }
       ],
       "services": {
