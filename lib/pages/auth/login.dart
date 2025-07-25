@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:glamify/pages/users/admin/admin_dashboard.dart';
 import 'package:glamify/pages/users/barber/barber_dashboard.dart';
-import 'package:glamify/pages/users/customer/nearbysalon.dart';
+import 'package:glamify/pages/users/customer/near_by_salon.dart';
 import 'package:glamify/pages/auth/signup.dart';
 
 import 'package:firebase_auth/firebase_auth.dart' as fbAuth;
