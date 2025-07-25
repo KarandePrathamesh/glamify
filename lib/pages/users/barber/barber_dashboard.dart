@@ -10,7 +10,7 @@ class BarberDashboard extends StatefulWidget {
 }
 
 class _BarberDashboardState extends State<BarberDashboard> {
-  // Logout function
+  // Logout functionality
   void logout(BuildContext context) {
     Navigator.pushAndRemoveUntil(
       context,
@@ -20,9 +20,18 @@ class _BarberDashboardState extends State<BarberDashboard> {
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
+        elevation: 2,
+        backgroundColor: Color(0xff191B06),
         behavior: SnackBarBehavior.floating,
-        duration: Duration(seconds: 3),
-        content: Text('Logged out successfully'),
+        duration: Duration(seconds: 5),
+        content: Text(
+          'Logged out successfully',
+          style: TextStyle(
+            fontSize: 16.5,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
@@ -38,7 +47,6 @@ class _BarberDashboardState extends State<BarberDashboard> {
     });
   }
 
-  
   //**Bottom navigation bar
   int _selectedIndexBottomNavBar = 0;
 
@@ -95,7 +103,7 @@ class _BarberDashboardState extends State<BarberDashboard> {
                 ],
               ),
             ),
-           ListTile(
+            ListTile(
               title: const Text(
                 'View Business Profile',
                 style: TextStyle(color: Colors.black, fontSize: 14.5),
@@ -117,7 +125,7 @@ class _BarberDashboardState extends State<BarberDashboard> {
                 style: TextStyle(color: Colors.black, fontSize: 14.5),
               ),
               selected: selectedIndex == 2,
-              onTap: () =>{},
+              onTap: () => {},
             ),
             ListTile(
               title: const Text(
@@ -133,7 +141,7 @@ class _BarberDashboardState extends State<BarberDashboard> {
                 style: TextStyle(color: Colors.black, fontSize: 14.5),
               ),
               selected: selectedIndex == 2,
-              onTap: () =>{},
+              onTap: () => {},
             ),
             ListTile(
               title: const Text(
@@ -147,9 +155,7 @@ class _BarberDashboardState extends State<BarberDashboard> {
         ),
       ),
 
-      appBar: AppBar(
-        title: Text('Barber Dashboard'),
-      ),
+      appBar: AppBar(title: Text('Barber Dashboard')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -211,7 +217,7 @@ class _BarberDashboardState extends State<BarberDashboard> {
         ),
       ),
 
-        //  **new bottom navigaton bar**
+      //  **new bottom navigaton bar**
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndexBottomNavBar,
         selectedItemColor: Colors.white,

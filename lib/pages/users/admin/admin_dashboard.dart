@@ -14,14 +14,23 @@ class _AdminDashboardState extends State<AdminDashboard> {
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(builder: (context) => const LoginScreen()),
-      (Route<dynamic> route) => false,
+      (Route<dynamic> route) => false, // Clears navigation history
     );
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
+        elevation: 2,
+        backgroundColor: Color(0xff191B06),
         behavior: SnackBarBehavior.floating,
-        duration: Duration(seconds: 3),
-        content: Text('Logged out successfully'),
+        duration: Duration(seconds: 5),
+        content: Text(
+          'Logged out successfully',
+          style: TextStyle(
+            fontSize: 16.5,
+            fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
+        ),
       ),
     );
   }
@@ -113,7 +122,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 style: TextStyle(color: Colors.black, fontSize: 14.5),
               ),
               selected: selectedIndex == 2,
-              onTap: () =>{},
+              onTap: () => {},
             ),
             ListTile(
               title: const Text(
@@ -129,7 +138,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                 style: TextStyle(color: Colors.black, fontSize: 14.5),
               ),
               selected: selectedIndex == 2,
-              onTap: () =>{},
+              onTap: () => {},
             ),
             ListTile(
               title: const Text(
