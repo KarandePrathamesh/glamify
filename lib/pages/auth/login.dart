@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20.0),
           child: ListView(
             shrinkWrap: true,
             physics: BouncingScrollPhysics(),
@@ -122,22 +122,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 TextFormField(
                   cursorColor: Colors.black,
                   controller: usernameController,
+                  keyboardType: TextInputType.name,
                   decoration: InputDecoration(
                     labelText: 'Username',
-                    labelStyle:
-                          TextStyle(color: Colors.black), // when not focused
-                      floatingLabelStyle: TextStyle(
-                        color: Colors
-                            .black, // this color will be shown when focused
-                        fontWeight: FontWeight.normal, // optional styling
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.black), // Change this to any color
-                      ),
+                    labelStyle: TextStyle(
+                      color: Colors.black,
+                    ), // when not focused
+                    floatingLabelStyle: TextStyle(
+                      color:
+                          Colors.black, // this color will be shown when focused
+                      fontWeight: FontWeight.normal, // optional styling
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.black),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ), // Change this to any color
+                    ),
                     icon: Icon(Icons.person_sharp, color: Colors.black),
                   ),
                   onChanged: (value) => username = value.trim(),
@@ -158,22 +161,25 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(
                 cursorColor: Colors.black,
                 controller: emailController,
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   labelText: 'Email',
-                  labelStyle:
-                          TextStyle(color: Colors.black), // when not focused
-                      floatingLabelStyle: TextStyle(
-                        color: Colors
-                            .black, // this color will be shown when focused
-                        fontWeight: FontWeight.normal, // optional styling
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.black), // Change this to any color
-                      ),
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                  ), // when not focused
+                  floatingLabelStyle: TextStyle(
+                    color:
+                        Colors.black, // this color will be shown when focused
+                    fontWeight: FontWeight.normal, // optional styling
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ), // Change this to any color
+                  ),
                   icon: Icon(Icons.email_rounded, color: Colors.black),
                 ),
                 onChanged: (value) => email = value.trim(),
@@ -193,23 +199,26 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFormField(
                 cursorColor: Colors.black,
                 controller: passwordController,
+                // keyboardType: TextInputType.visiblePassword,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
-                  labelStyle:
-                          TextStyle(color: Colors.black), // when not focused
-                      floatingLabelStyle: TextStyle(
-                        color: Colors
-                            .black, // this color will be shown when focused
-                        fontWeight: FontWeight.normal, // optional styling
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.black),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                            color: Colors.black), // Change this to any color
-                      ),
+                  labelStyle: TextStyle(
+                    color: Colors.black,
+                  ), // when not focused
+                  floatingLabelStyle: TextStyle(
+                    color:
+                        Colors.black, // this color will be shown when focused
+                    fontWeight: FontWeight.normal, // optional styling
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.black),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.black,
+                    ), // Change this to any color
+                  ),
                   icon: Icon(Icons.password_sharp, color: Colors.black),
                 ),
                 onChanged: (value) => password = value.trim(),
@@ -247,7 +256,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       final role = userDoc['role'];
                       final username = userDoc['username'];
-                     
 
                       // Greeting message
                       String greetingMessage(String name) {
@@ -265,27 +273,29 @@ class _LoginScreenState extends State<LoginScreen> {
 
                       // Create SnackBar
                       final snackBar = SnackBar(
+                        elevation: 2,
+                        backgroundColor: Color(0xff191B06),
                         behavior: SnackBarBehavior.floating,
-                        duration: const Duration(seconds: 3),
+                        duration: const Duration(seconds: 5),
                         content: Text(
                           greetingMessage(username),
                           textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontSize: 16.5,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                          ),
                         ),
                       );
 
-
                       // Show SnackBar
-                       ScaffoldMessenger.of(context).showSnackBar(
-                       snackBar
-                      );
-
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
                       // Clear Fields and State
                       usernameController.clear();
                       emailController.clear();
                       passwordController.clear();
                       _formKey.currentState!.reset();
-
 
                       // Navigate to role-based screens
                       if (role == 'Admin') {
@@ -307,10 +317,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     } catch (e) {
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
+                          elevation: 2,
+                          backgroundColor: Colors.white,
                           behavior: SnackBarBehavior.floating,
-                          duration: const Duration(seconds: 3),
-                          content: Text('Login Failed: $e')
+                          duration: const Duration(seconds: 5),
+                          content: Text(
+                            'Log in failed !',
+                            style: TextStyle(
+                              fontSize: 16.5,
+                              fontWeight: FontWeight.w700,
+                              color: Colors.red[800],
+                            ),
                           ),
+                        ),
                       );
                     }
                   }
@@ -318,14 +337,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
-                  padding: EdgeInsets.symmetric(horizontal: 90, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
                 ),
                 child: Text(
                   'Log in',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
-                   fontWeight: FontWeight.w600
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),

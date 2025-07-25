@@ -118,7 +118,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.all(10.5),
+            padding: const EdgeInsets.all(20),
             child: Form(
               key: _formKey,
               child: ListView(
@@ -130,6 +130,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     cursorColor: Colors.black,
                     controller: usernameController,
+                    keyboardType: TextInputType.name,
                     decoration: InputDecoration(
                       labelText: 'Username',
                       labelStyle: TextStyle(
@@ -174,6 +175,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     cursorColor: Colors.black,
                     controller: emailController,
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                       labelText: 'Email',
                       labelStyle: TextStyle(
@@ -195,7 +197,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       icon: Icon(Icons.email_rounded, color: Colors.black),
                     ),
-                    keyboardType: TextInputType.emailAddress,
 
                     // ** setState
                     onChanged: (value) {
@@ -411,15 +412,34 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
-                              content: Text('Registration Successful'),
+                              elevation: 2,
+                              backgroundColor: Colors.white,
+                              behavior: SnackBarBehavior.floating,
+                              duration: Duration(seconds: 5),
+                              content: Text(
+                                'Registration Successful',
+                                style: TextStyle(
+                                  fontSize: 16.5,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.green,
+                                ),
+                              ),
                             ),
                           );
                         } catch (e) {
-                          print('Error during signup: $e');
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(
+                              elevation: 2,
+                              backgroundColor: Colors.white,
+                              behavior: SnackBarBehavior.floating,
+                              duration: const Duration(seconds: 5),
                               content: Text(
-                                'Signup failed due to : ${e.toString()}',
+                                'Signup failed !',
+                                style: TextStyle(
+                                  fontSize: 16.5,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.red[800],
+                                ),
                               ),
                             ),
                           );
@@ -430,8 +450,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black,
                       padding: EdgeInsets.symmetric(
-                        horizontal: 90,
-                        vertical: 20,
+                        horizontal: 70,
+                        vertical: 15,
                       ),
                     ),
                     child: Text(
