@@ -193,37 +193,29 @@ class _NearBySalonState extends State<NearBySalon> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: Drawer(
+        width: MediaQuery.of(context).size.width / 1.6,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
               margin: EdgeInsets.zero,
               padding: EdgeInsets.zero,
-              decoration: const BoxDecoration(
-                border: Border(bottom: BorderSide.none),
-                color: Color(0xff636362),
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(0),
-                  topRight: Radius.circular(0),
-                  bottomLeft: Radius.circular(0),
-                  bottomRight: Radius.circular(40),
-                ),
-              ),
+              decoration: const BoxDecoration(color: Color(0xff191B06)),
               curve: Curves.fastOutSlowIn,
               child: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  SizedBox(height: 20.0),
-                  ClipOval(
+                  Container(
+                    height: 125,
+                    width: 140,
                     child: Image.asset(
                       'assets/images/glamify_logo.jpg',
-                      height: 100,
-                      width: 100,
                       fit: BoxFit.cover,
                     ),
                   ),
                   const Text(
                     'User Settings',
-                    style: TextStyle(color: Colors.white, fontSize: 24),
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],
               ),
@@ -395,7 +387,7 @@ class SalonCard extends StatelessWidget {
               ),
               child: Image.asset(
                 imageUrl,
-                height: 100,
+                height: 130,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
