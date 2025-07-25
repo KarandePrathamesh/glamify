@@ -27,40 +27,46 @@ dev_dependencies:
   flutter_native_splash: ^2.4.5
 
 flutter_native_splash:
-  color: "#000000"
-  image: assets/images/glamify_logo.jpg
-  color_dark: "#000000"
-  image_dark: assets/images/glamify_logo.jpg
+  # use your sampled background color!
+  color: "#191B06"
+  image: assets/images/glamify_logo.png
+  fullscreen: true
 
   android_12:
-    image: assets/images/glamify_logo.jpg
-    icon_background_color: "#000000"
-    image_dark: assets/images/glamify_logo.jpg
-    icon_background_color_dark: "#000000"
-  fullscreen: true
-  web: true
+    # this config is for the new Android‑12 splash API
+    color: "#191B06"
+    image: assets/images/glamify_logo.png
+    icon_background_color: "#191B06"
+    fullscreen: true
 
+  ios: true
+  android: true
+  web: true
  
 
 flutter_launcher_icons:
-  android: "launcher_icon"
+  android: true
   ios: true
-  image_path: "assets/images/glamify_logo.png"
-  # min_sdk_android: 21 # android min sdk min:16, default 21
-  adaptive_icon_background: "#0xFF"
-  adaptive_icon_foreground: "assets/images/glamify_logo_foreground.png"
+  image_path: "assets/images/glamify_logo.png"   # fallback on older platforms
+  adaptive_icon_background: "assets/images/ic_launcher_foreground.png"
+  adaptive_icon_foreground: "assets/images/ic_launcher_foreground.png"
+
   web:
     generate: true
-    image_path: "assets/images/glamify_logo.png"
-    background_color: "0xFF"
-    theme_color: "#hexcode"
+    image_path: "assets/images/ic_launcher_foreground.png"
+    background_color: "#191B06"
+    theme_color: "#191B06"
+
   windows:
     generate: true
-    image_path: "assets/images/glamify_logo.png"
-    icon_size: 48 # min:48, max:256, default: 48
+    image_path: "assets/images/ic_launcher_foreground.png"
+    background_color: "#191B06"
+    icon_size: 48
+
   macos:
     generate: true
-    image_path: "assets/images/glamify_logo.png"
+    image_path: "assets/images/ic_launcher_foreground.png"
+    background_color: "#191B06"
 
 
 
