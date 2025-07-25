@@ -13,7 +13,7 @@ class CreateBusinessProfile extends StatefulWidget {
 }
 
 class _CreateBusinessProfileState extends State<CreateBusinessProfile> {
-  File? _image;
+  // File? _image;
   final picker = ImagePicker();
   final TextEditingController salonNameController = TextEditingController();
   final TextEditingController salonAddressController = TextEditingController();
@@ -21,14 +21,14 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile> {
   final TextEditingController longitudeController = TextEditingController();
   final TextEditingController servicesController = TextEditingController();
 
-  Future<void> _pickImage() async {
-    final pickedFile = await picker.pickImage(source: ImageSource.gallery);
-    if (pickedFile != null) {
-      setState(() {
-        _image = File(pickedFile.path);
-      });
-    }
-  }
+  // Future<void> _pickImage() async {
+  //   final pickedFile = await picker.pickImage(source: ImageSource.gallery);
+  //   if (pickedFile != null) {
+  //     setState(() {
+  //       _image = File(pickedFile.path);
+  //     });
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -55,23 +55,25 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile> {
                   //  key: _formKey,
                   child: Column(
                     children: [
-                      GestureDetector(
-                        onTap: _pickImage,
-                        child: CircleAvatar(
-                          radius: 50,
-                          // backgroundColor: Colors.black,
-                          backgroundImage:
-                              _image != null ? FileImage(_image!) : null,
-                          child:
-                              _image == null
-                                  ? const Icon(
-                                    Icons.camera_alt,
-                                    size: 40,
-                                    color: Colors.white,
-                                  )
-                                  : null,
-                        ),
-                      ),
+                      // As Firebase unpaid version does not supports the images
+
+                      // GestureDetector(
+                      //   onTap: _pickImage,
+                      //   child: CircleAvatar(
+                      //     radius: 50,
+                      //     // backgroundColor: Colors.black,
+                      //     backgroundImage:
+                      //         _image != null ? FileImage(_image!) : null,
+                      //     child:
+                      //         _image == null
+                      //             ? const Icon(
+                      //               Icons.camera_alt,
+                      //               size: 40,
+                      //               color: Colors.white,
+                      //             )
+                      //             : null,
+                      //   ),
+                      // ),
 
                       // **Saloon Name Field
                       SizedBox(height: 16),
@@ -149,16 +151,17 @@ class _CreateBusinessProfileState extends State<CreateBusinessProfile> {
                         child: ElevatedButton(
                           // onPressed: (){},
                           onPressed: () async {
-                            if (_image != null &&
-                                salonNameController.text != "" &&
+                            if (
+                            // _image != null &&
+                            salonNameController.text != "" &&
                                 salonAddressController.text != "" &&
                                 latitudeController.text != "" &&
                                 longitudeController.text != "" &&
                                 servicesController.text != "") {
                               String addID = randomAlphaNumeric(10);
 
+                              // "SalonImage": _image,
                               Map<String, dynamic> SalonShopsInfoMap = {
-                                "SalonImage": _image,
                                 "SalonName": salonNameController.text,
                                 "SalonAddress": salonAddressController.text,
                                 "Latitude": latitudeController.text,
