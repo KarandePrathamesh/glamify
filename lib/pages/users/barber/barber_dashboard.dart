@@ -47,23 +47,6 @@ class _BarberDashboardState extends State<BarberDashboard> {
     });
   }
 
-  //**Bottom navigation bar
-  int _selectedIndexBottomNavBar = 0;
-
-  // Screens for each tab
-  static final List<Widget> _pages = <Widget>[
-    const Center(child: Text('🏠 Home')),
-    const Center(child: Text('🔍 Explore')),
-    const Center(child: Text('📅 Bookings')),
-    const Center(child: Text('👤 Profile')),
-  ];
-
-  void _onItemTappedBottomNavBar(int index) {
-    setState(() {
-      _selectedIndexBottomNavBar = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,6 +89,14 @@ class _BarberDashboardState extends State<BarberDashboard> {
             ListTile(
               title: const Text(
                 'Update Business Profile',
+                style: TextStyle(color: Colors.black, fontSize: 14.5),
+              ),
+              selected: selectedIndex == 1,
+              onTap: () => onNavItemTap(1),
+            ),
+            ListTile(
+              title: const Text(
+                'Today\'s Sale !',
                 style: TextStyle(color: Colors.black, fontSize: 14.5),
               ),
               selected: selectedIndex == 1,
@@ -207,39 +198,6 @@ class _BarberDashboardState extends State<BarberDashboard> {
             ),
           ],
         ),
-      ),
-
-      //  **new bottom navigaton bar**
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndexBottomNavBar,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey[500],
-        onTap: _onItemTappedBottomNavBar,
-        type:
-            BottomNavigationBarType
-                .shifting, // use shifting if you want animations
-        items: const [
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.explore),
-            label: 'Explore',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.calendar_today),
-            label: 'Bookings',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
       ),
     );
   }
