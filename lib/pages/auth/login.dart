@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:glamify/pages/users/admin/admin_dashboard.dart';
-import 'package:glamify/pages/users/barber/barber_dashboard.dart';
-import 'package:glamify/pages/users/customer/near_by_salon.dart';
+import 'package:glamify/pages/users/admin/bottom_nav.dart';
+import 'package:glamify/pages/users/barber/bottom_nav.dart';
+import 'package:glamify/pages/users/customer/bottom_nav.dart';
 import 'package:glamify/pages/auth/signup.dart';
 
 import 'package:firebase_auth/firebase_auth.dart' as fbAuth;
@@ -301,17 +301,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       if (role == 'Admin') {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (_) => AdminDashboard()),
+                          MaterialPageRoute(
+                            builder: (_) => AdminBottomNavBar(),
+                          ),
                         );
                       } else if (role == 'Barber') {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (_) => BarberDashboard()),
+                          MaterialPageRoute(
+                            builder: (_) => BarberBottomNavBar(),
+                          ),
                         );
                       } else {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (_) => NearBySalon()),
+                          MaterialPageRoute(builder: (_) => UserBottomNavBar()),
                         );
                       }
                     } catch (e) {
