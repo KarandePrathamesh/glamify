@@ -4,6 +4,7 @@ import 'package:glamify/pages/users/customer/Salondetails.dart';
 
 // import of geolocator to take users location in latitude and longitude
 import 'package:geolocator/geolocator.dart';
+import 'package:glamify/pages/users/customer/bottom_nav.dart';
 
 class NearBySalon extends StatefulWidget {
   const NearBySalon({super.key});
@@ -151,15 +152,6 @@ class _NearBySalonState extends State<NearBySalon> {
     debugPrint("Latitude: $latitude, Longitude: $longitude");
   }
 
-  // **user location widget**
-  // Widget _buildLocationWidget() {
-  //   return Center(
-  //     child: latitude == null || longitude == null
-  //         ? const Text("Fetching location...")
-  //         : Text("Latitude: $latitude, Longitude: $longitude"),
-  //   );
-  // }
-
   // **Drawer Code*
   int selectedIndex = 0;
   final List<Widget> screens = [
@@ -168,23 +160,6 @@ class _NearBySalonState extends State<NearBySalon> {
   void onNavItemTap(int index) {
     setState(() {
       selectedIndex = index;
-    });
-  }
-
-  //**Bottom navigation bar
-  int _selectedIndexBottomNavBar = 0;
-
-  // Screens for each tab
-  static final List<Widget> _pages = <Widget>[
-    const Center(child: Text('🏠 Home')),
-    const Center(child: Text('🔍 Explore')),
-    const Center(child: Text('📅 Bookings')),
-    const Center(child: Text('👤 Profile')),
-  ];
-
-  void _onItemTappedBottomNavBar(int index) {
-    setState(() {
-      _selectedIndexBottomNavBar = index;
     });
   }
 
@@ -214,7 +189,7 @@ class _NearBySalonState extends State<NearBySalon> {
                     ),
                   ),
                   const Text(
-                    'User Settings',
+                    'Settings',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],
@@ -271,12 +246,9 @@ class _NearBySalonState extends State<NearBySalon> {
           ],
         ),
       ),
-
       backgroundColor: Colors.grey[200],
-
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 1,
+        backgroundColor: Colors.transparent,
         title: const Text(
           'Near by Salon',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
@@ -308,39 +280,6 @@ class _NearBySalonState extends State<NearBySalon> {
             }
           },
         ),
-      ),
-
-      //  **new bottom navigaton bar**
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndexBottomNavBar,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey[500],
-        onTap: _onItemTappedBottomNavBar,
-        type:
-            BottomNavigationBarType
-                .shifting, // use shifting if you want animations
-        items: const [
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.explore),
-            label: 'Explore',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.calendar_today),
-            label: 'Bookings',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
       ),
     );
   }
