@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:glamify/pages/auth/login.dart';
+import 'package:glamify/pages/users/admin/search_functionality.dart';
 
 class AdminDashboard extends StatefulWidget {
   const AdminDashboard({super.key});
@@ -40,28 +41,12 @@ class _AdminDashboardState extends State<AdminDashboard> {
   final List<Widget> screens = [
     const UsersTable(),
     const Center(child: Text("Salon Shops coming soon...")),
+    SearchPage(),
   ];
 
   void onNavItemTap(int index) {
     setState(() {
       selectedIndex = index;
-    });
-  }
-
-  //**Bottom navigation bar
-  int _selectedIndexBottomNavBar = 0;
-
-  // Screens for each tab
-  static final List<Widget> _pages = <Widget>[
-    const Center(child: Text('🏠 Home')),
-    const Center(child: Text('🔍 Explore')),
-    const Center(child: Text('📅 Bookings')),
-    const Center(child: Text('👤 Profile')),
-  ];
-
-  void _onItemTappedBottomNavBar(int index) {
-    setState(() {
-      _selectedIndexBottomNavBar = index;
     });
   }
 
@@ -110,6 +95,14 @@ class _AdminDashboardState extends State<AdminDashboard> {
             ),
             ListTile(
               title: const Text(
+                'Search Page',
+                style: TextStyle(color: Colors.black, fontSize: 14.5),
+              ),
+              selected: selectedIndex == 2,
+              onTap: () => onNavItemTap(2),
+            ),
+            ListTile(
+              title: const Text(
                 'Privacy Policies',
                 style: TextStyle(color: Colors.black, fontSize: 14.5),
               ),
@@ -145,39 +138,6 @@ class _AdminDashboardState extends State<AdminDashboard> {
       ),
 
       body: screens[selectedIndex],
-
-      //  **new bottom navigaton bar**
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndexBottomNavBar,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey[500],
-        onTap: _onItemTappedBottomNavBar,
-        type:
-            BottomNavigationBarType
-                .shifting, // use shifting if you want animations
-        items: const [
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.explore),
-            label: 'Explore',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.calendar_today),
-            label: 'Bookings',
-          ),
-          BottomNavigationBarItem(
-            backgroundColor: Colors.black,
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-      ),
     );
   }
 }
