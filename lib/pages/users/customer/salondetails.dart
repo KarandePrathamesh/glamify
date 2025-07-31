@@ -25,7 +25,7 @@ class _SalonDetailsState extends State<SalonDetails> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
@@ -44,13 +44,13 @@ class _SalonDetailsState extends State<SalonDetails> {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Salon Image
             Container(
-              height: 250,
+              height: 230,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(12),
@@ -103,8 +103,6 @@ class _SalonDetailsState extends State<SalonDetails> {
             ),
             const SizedBox(height: 20),
 
-          
-
             // Services Section
             const Text(
               "Services",
@@ -121,7 +119,9 @@ class _SalonDetailsState extends State<SalonDetails> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => MenServicesPage()),
+                        MaterialPageRoute(
+                          builder: (context) => MenServicesPage(),
+                        ),
                       );
                     },
                   ),
@@ -131,18 +131,18 @@ class _SalonDetailsState extends State<SalonDetails> {
                     icon: Icons.female,
                     text: "Services for Women",
                     color: Colors.black,
-                    onPressed: () {  
+                    onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => WomenServicesPage()),
+                        MaterialPageRoute(
+                          builder: (context) => WomenServicesPage(),
+                        ),
                       );
                     },
                   ),
                 ],
               ),
             ),
-
-
 
             const SizedBox(height: 20),
             // App Logo Placeholder
@@ -153,7 +153,7 @@ class _SalonDetailsState extends State<SalonDetails> {
                     child: Image.asset(
                       'assets/images/glamify_logo.png',
                       height: 90,
-                      width:90,
+                      width: 90,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -165,10 +165,6 @@ class _SalonDetailsState extends State<SalonDetails> {
                 ],
               ),
             ),
-            
-
-
-
           ],
         ),
       ),
@@ -204,4 +200,3 @@ class ServiceButton extends StatelessWidget {
     );
   }
 }
-

@@ -8,7 +8,7 @@ class WomenServicesPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
@@ -30,13 +30,19 @@ class WomenServicesPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SectionTitle(title: "Haircut Services"),
-              ServiceGrid(services: ["Haircuts", "Hair Treatments", "Hair Coloring"]),
+              ServiceGrid(
+                services: ["Haircuts", "Hair Treatments", "Hair Coloring"],
+              ),
               const SectionTitle(title: "Skin Services"),
               ServiceGrid(services: ["Facials", "Body Polish", "Body Scrub"]),
               const SectionTitle(title: "Body Services"),
-              ServiceGrid(services: ["Full Body Massage", "Pedicures", "Manicures"]),
+              ServiceGrid(
+                services: ["Full Body Massage", "Pedicures", "Manicures"],
+              ),
               const SectionTitle(title: "Other Services"),
-              ServiceGrid(services: ["Waxing", "Tanning", "Hair Removal", "Aromatherapy"]),
+              ServiceGrid(
+                services: ["Waxing", "Tanning", "Hair Removal", "Aromatherapy"],
+              ),
             ],
           ),
         ),
@@ -101,7 +107,11 @@ class ServiceCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.image, size: 40, color: Colors.grey), // Placeholder image
+          const Icon(
+            Icons.image,
+            size: 40,
+            color: Colors.grey,
+          ), // Placeholder image
           const SizedBox(height: 5),
           Text(
             serviceName,

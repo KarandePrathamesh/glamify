@@ -8,7 +8,7 @@ class MenServicesPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black),
@@ -32,11 +32,21 @@ class MenServicesPage extends StatelessWidget {
               const SectionTitle(title: "Haircuts"),
               ServiceGrid(services: ["Classic Cuts", "Buzz Cuts", "Fades"]),
               const SectionTitle(title: "Beard Grooming"),
-              ServiceGrid(services: ["Beard Trim", "Mustache Trim", "Beard Shaping"]),
+              ServiceGrid(
+                services: ["Beard Trim", "Mustache Trim", "Beard Shaping"],
+              ),
               const SectionTitle(title: "Shaving Services"),
               ServiceGrid(services: ["Razor Shave", "Neck Shave", "etc..."]),
               const SectionTitle(title: "Other Services"),
-              ServiceGrid(services: ["Hair Wash", "Hot Towel T.", "Hair Styling", "Hair Coloring", "Facials"]),
+              ServiceGrid(
+                services: [
+                  "Hair Wash",
+                  "Hot Towel T.",
+                  "Hair Styling",
+                  "Hair Coloring",
+                  "Facials",
+                ],
+              ),
             ],
           ),
         ),
@@ -101,7 +111,11 @@ class ServiceCard extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(Icons.image, size: 40, color: Colors.grey), // Placeholder image
+          const Icon(
+            Icons.image,
+            size: 40,
+            color: Colors.grey,
+          ), // Placeholder image
           const SizedBox(height: 5),
           Text(
             serviceName,
